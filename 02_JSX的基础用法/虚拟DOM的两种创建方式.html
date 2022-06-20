@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="test1"></div>   
+    <div id="test2"></div>   
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!-- 使用js创建虚拟DOM -->
+    <script type="text/javascript">
+        let id = 'AtguiGU'
+        let content = "HelLo,WoRld"
+        let vDOM1 = React.createElement('h2',{id:id.toLowerCase()},content.toLowerCase())
+        ReactDOM.render(vDOM1,document.getElementById('test1'))
+    </script>
+    <!-- 使用JSX创建虚拟DOM -->
+    <script type="text/babel">
+        let vDOM2 = (
+            <div>
+                <h3 id={id.toLowerCase()} className="{red}">
+                    {content.toLowerCase()}
+                </h3>
+                <h1>哈喽</h1>
+            </div>
+        )
+        ReactDOM.render(vDOM2,document.getElementById('test2'))
+    </script>
+
+</body>
+</html>
